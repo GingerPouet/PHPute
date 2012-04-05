@@ -1,17 +1,16 @@
-<!DOCTYPE html>
-<?php include("includes/settings.php"); ?>
-<?php include("includes/header.php"); ?>
+<?php include("includes/headers/head.php")?>
 
-	<div id="content">
-		<div id="droite">
-		</div>
-		<div id="haut">
-		</div>
-		<div id="gauche">
-		</div>
+<!-- banniere-->
 
-		<div class="clear"></div>
-	</div>
+    <!--if logged : 
+        include: header 
+        content: include: switch page (default: accueil_logged) + actu
+    else : 
+        include: header_unlogged
+            content: include: accueil_unlogged + actu-->
+    
 
-<?php include("includes/footer.php");?>
-
+<?php 
+    include("includes/headers/header_unlogged.php");
+    include("includes/footer.php");
+?>

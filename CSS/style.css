@@ -1,43 +1,61 @@
+/* Reset */
+	html, body, div, p, ul, li, img, span, a, h1, h2, h3, h4 { margin:0; padding:0; }
+	html { font-family:Trebuchet MS; font-size:12px; line-height:16px; color:#383838; }
+	a { color:#383838; text-decoration:none; }
+	a:hover { color:#383838; text-decoration:underline; }
+	a img { border:none; }
+	.clear { clear:both; }
+	
 body {
-  background-image: url("../includes/img/background.png");
+  background-image: url("../img/background.png");
   background-attachment : fixed;
 }
 
 header {
   width: 900px;
-  height: 110px;
+  height: 150px;
   margin: auto;
   margin-top: 40px;
-}
-#menu {
-  width: 350px;
-  height: 30px;
-  float: right;
-  margin-top: 70px;
-  background-color: red;
-}
-.clear {
-  clear: both;
+  background-color: blue;
+  opacity: 0.5;
 }
 
-.box-top {
-  height: 10px;
-  background-image: url("../includes/img/box-top.png");
+#banner {
+  width: 900px;
+  height: 110px;
+  margin: auto;
+  background-color: red;
+  opacity: 0.5;
 }
-.box-content {
+
+header search{
+  width: 400px;
+  height: 40px;
+  margin-left: 150px;
   background-color: white;
 }
-.box-bottom {
-  height: 10px;
-  background-image: url("../includes/img/box-bottom.png");
+
+#menu {
+  width: 150px;
+  height: 30px;
+  margin: auto;
+  margin-top:70px;
+}
+
+#menu li {
+  margin-left: 10px;
+  padding-top: 5px;
+  list-style: none;
+  float: left;
+  font-size: 15px;
 }
 
 #content {
   width: 1111px;
   height: 626px;
   margin: auto;
-  margin-top: 50px;
-  background-image: url("../includes/img/fond_content.png");
+  margin-top: 10px;
+  background-image: url("../img/fond_content.png");
 }
 
 #droite {
@@ -49,10 +67,11 @@ header {
   height: 500px;
 }
 
-#haut { /*div inutile pour l'instant mais sinon j'arrivais pas à bien cadrer la gauche, va savoir pourquoi */
+#search{ 
   width: 400px;
   height: 40px;
-  margin-left: 50px;
+  margin-left: 150px;
+  background-color: white;
 }
 
 #gauche {
@@ -65,10 +84,26 @@ header {
 
 
 footer {
-  width: 400px;
+  width: 600px;
   height: 50px;
-  background-color: red;
   margin: auto;
   margin-top: 10px;
   margin-bottom: 40px;
+}
+
+#pdp{
+  margin: 10px 0px 0px 10px; /* haut droite bas gauche */
+  padding-top: 5px;
+  height: 25px;
+  float: left;
+  background-color: white;
+}
+
+#logo{
+  float: left;
+}
+
+footer img{
+  width: 51px;
+  height:70px;
 }
