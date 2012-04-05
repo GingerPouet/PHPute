@@ -10,11 +10,14 @@
 
 	<body>
 <header>
-	<div class="box-top"></div>
-	<div class="box-content">
 		<div id="menu">
+			<div class="links">
+				<ul>
+					<li class="button"><div class="remplissage"><a href="accueil.php" alt="accueil.php">Accueil</a></div></li>
+					<li class="button"><div class="remplissage"><a href="profil.php" alt="profil.php">Profil</a></div></li>
+					<li class="button"><div class="remplissage"><a href="quizz.php" alt="quizz.php">Quizz</a></div></li>
+				</ul>
+			</div>
 		</div>
 		<div class="clear"></div>
-	</div>
-	<div class="box-bottom"></div>
 </header>

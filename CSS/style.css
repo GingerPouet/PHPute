@@ -1,3 +1,11 @@
+/* Reset */
+	html, body, div, p, ul, li, img, span, a, h1, h2, h3, h4 { margin:0; padding:0; }
+	html { font-family:Trebuchet MS; font-size:12px; line-height:16px; color:#383838; }
+	a { color:#383838; text-decoration:none; }
+	a:hover { color:#383838; text-decoration:underline; }
+	a img { border:none; }
+	.clear { clear:both; }
+	
 body {
   background-image: url("../includes/img/background.png");
   background-attachment : fixed;
@@ -9,27 +17,20 @@ header {
   margin: auto;
   margin-top: 40px;
 }
+
 #menu {
-  width: 350px;
+  width: 150px;
   height: 30px;
-  float: right;
-  margin-top: 70px;
-  background-color: red;
-}
-.clear {
-  clear: both;
+  margin: auto;
+  margin-top:70px;
 }
 
-.box-top {
-  height: 10px;
-  background-image: url("../includes/img/box-top.png");
-}
-.box-content {
-  background-color: white;
-}
-.box-bottom {
-  height: 10px;
-  background-image: url("../includes/img/box-bottom.png");
+#menu li {
+  margin-left: 10px;
+  padding-top: 5px;
+  list-style: none;
+  float: left;
+  font-size: 15px;
 }
 
 #content {
@@ -65,10 +66,26 @@ header {
 
 
 footer {
-  width: 400px;
+  width: 600px;
   height: 50px;
-  background-color: red;
   margin: auto;
   margin-top: 10px;
   margin-bottom: 40px;
+}
+
+#pdp{
+  margin: 10px 0px 0px 10px; /* haut droite bas gauche */
+  padding-top: 5px;
+  height: 25px;
+  float: left;
+  background-color: white;
+}
+
+#logo{
+  float: left;
+}
+
+footer img{
+  width: 51px;
+  height:70px;
 }

@@ -1,1 +1,4 @@
-<p> Page d'accueil </p>
+<div id="droite">
+	<div class="actu"></div>
+</div>
+
