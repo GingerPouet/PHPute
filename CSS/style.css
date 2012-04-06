@@ -40,7 +40,7 @@ header search{
   width: 150px;
   height: 30px;
   margin: auto;
-  margin-top:70px;
+  margin-top:80px;
 }
 
 #menu li {
@@ -51,6 +51,13 @@ header search{
   font-size: 15px;
 }
 
+#search{ 
+  width: 400px;
+  height: 40px;
+  margin-left: 150px;
+  background-color: white;
+}
+
 #content {
   width: 1111px;
   height: 626px;
@@ -59,28 +66,24 @@ header search{
   background-image: url("../img/fond_content.png");
 }
 
-#droite {
+.gauche {
+  float: left;
+  margin: 110px 0px 0px 170px; /* haut droite bas gauche */
+  background-color: black;
+  opacity: 0.5;
+  width: 410px;
+  height: 390px;
+}
+
+.droite {
   float: right;
   background-color: black;
   opacity: 0.5;
   margin: 60px 110px 0px 0px; /* haut droite bas gauche */
   width: 290px;
-  height: 500px;
-}
-
-#search{ 
-  width: 400px;
-  height: 40px;
-  margin-left: 150px;
-  background-color: white;
-}
-
-#gauche {
-  margin: 90px 0px 0px 170px; /* haut droite bas gauche */
+  height: 480px;
   background-color: black;
   opacity: 0.5;
-  width: 410px;
-  height: 380px;
 }
 
 

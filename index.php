@@ -9,8 +9,9 @@
         include: header_unlogged
             content: include: accueil_unlogged + actu-->
     
-
-<?php 
+   
+<?php
     include("includes/headers/header_unlogged.php");
+    include("includes/trunk.php");
     include("includes/footer.php");
 ?>
