@@ -1,5 +1,4 @@
 <?php include("includes/headers/head.php")?>
-
 <!-- banniere-->
 
     <!--if logged : 

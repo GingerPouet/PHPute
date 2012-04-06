@@ -49,6 +49,7 @@ header search{
   list-style: none;
   float: left;
   font-size: 15px;
+
 }
 
 #search{ 
@@ -56,6 +57,7 @@ header search{
   height: 40px;
   margin-left: 150px;
   background-color: white;
+
 }
 
 #content {
