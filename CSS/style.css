@@ -5,6 +5,7 @@
 	a:hover { color:#383838; text-decoration:underline; }
 	a img { border:none; }
 	.clear { clear:both; }
+        .indentation{margin-left: 5px;}
 	
 body {
   background-image: url("../img/background.png");

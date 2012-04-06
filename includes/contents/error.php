@@ -1,2 +1,2 @@
-<meta http-equiv="Refresh" content="2;URL=index.php">
-<p>Une erreur c'est produite lors de votre inscription, veuillez réessayer plus tard.</p>
+<meta http-equiv="Refresh" content="URL=index.php">
+<p>Une erreur s'est produite lors de votre inscription, veuillez rÃ©essayer plus tard.</p>

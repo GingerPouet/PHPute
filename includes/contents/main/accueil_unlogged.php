@@ -1,22 +1,22 @@
 <div id="gauche">
 	<p> Bienvenue sur <nom du site>, <br/>
-	ici, nous vous proposons un ensemble de quizz crées par les utilisateurs. <br/>
-	Pour participer et bénéficier des services de ce site, vous devez être enregistré. <br/>
-	Si c'est déjà fait, vous n'avez qu'à vous connecter pour profiter plainement de nos services. 
-	Si ce n'est pas encore le cas, n'attendez pas et rejoignez la communauté de <nom du site>. <br/>
+	ici, nous vous proposons un ensemble de quizz crÃ©es par les utilisateurs. <br/>
+	Pour participer et bÃ©nÃ©ficier des services de ce site, vous devez Ãªtre enregistrÃ©. <br/>
+	Si c'est dÃ©jÃ  fait, vous n'avez qu'Ã  vous connecter pour profiter plainement de nos services. 
+	Si ce n'est pas encore le cas, n'attendez pas et rejoignez la communautÃ© de <nom du site>. <br/>
 	Bon quizz ! </p>
 
 	<h1>Connexion</h1>
 			<form id="login-form" method="post" action="<!--A COMPLETER !!!!!!-->">
 				<label>Email</label><input type="text" name="log_mail" value="" /><br/>
 				<label>Password</label><input type="password" name="log_password" value="" /><br/>
-				<input type="submit" value="Se connecter" />  <!--oublie de mdp voir site du zéro-->
+				<input type="submit" value="Se connecter" />  <!--oublie de mdp voir site du zï¿½ro-->
 			</form>
 
 			<h1>Inscription</h1>
 			<form id="inscription-form" method="post" action="<!--A COMPLETER !!!!!!-->">
 				<label>Nom </label><input type="text" name="firstname" id="firstName"/><br/>
-				<label>Prénom </label><input type="text" name="name" id="name"/><br/>
+				<label>PrÃ©nom </label><input type="text" name="name" id="name"/><br/>
 				<label>Nom d'utilisateur (il vous serivra de login) </label><input type="text" name="login" id="login"/><br/>
 				<label>Date de naissance </label><input type="text" name="birthday" value="YYYY-MM-DD" id="birthday"/><br/>
 				<label>Sexe </label><input type= "radio" name="sex" value="homme" class="sex"> H
