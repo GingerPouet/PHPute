@@ -1,16 +1,17 @@
-<?php include("includes/headers/head.php")?>
-<!-- banniere-->
+<?php 
+    include("includes/headers/head.php");
 
-    <!--if logged : 
-        include: header 
-        content: include: switch page (default: accueil_logged) + actu
-    else : 
-        include: header_unlogged
-            content: include: accueil_unlogged + actu-->
+   /* if <logged> { 
+        include("includes/headers/header_logged.php")
+        include("includes/trunks/trunk_logged.php"); 
+    }
+    else
+    {
+      include("includes/headers/header_unlogged.php");
+      include("includes/trunks/trunk_unlogged.php");
+    */
     
-   
-<?php
     include("includes/headers/header_unlogged.php");
-    include("includes/trunk.php");
+    include("includes/trunks/trunk_unlogged.php");
     include("includes/footer.php");
 ?>

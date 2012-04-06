@@ -1,16 +1,19 @@
 /* Reset */
-	html, body, div, p, ul, li, img, span, a, h1, h2, h3, h4 { margin:0; padding:0; }
-	html { font-family:Trebuchet MS; font-size:12px; line-height:16px; color:#383838; }
-	a { color:#383838; text-decoration:none; }
-	a:hover { color:#383838; text-decoration:underline; }
-	a img { border:none; }
-	.clear { clear:both; }
-        .indentation{margin-left: 5px;}
+html, body, div, p, ul, li, img, span, a, h1, h2, h3, h4 { margin:0; padding:0; }
+html { font-family:Trebuchet MS; font-size:12px; line-height:16px; color:#383838; }
+a { color:#383838; text-decoration:none; }
+a:hover { color:#383838; text-decoration:underline; }
+a img { border:none; }
+.clear { clear:both; }
+.indentation{margin-left: 5px;}
 	
 body {
   background-image: url("../img/background.png");
   background-attachment : fixed;
 }
+
+
+/*Headers*/
 
 header {
   width: 900px;
@@ -60,6 +63,9 @@ header search{
 
 }
 
+
+/*Content*/
+
 #content {
   width: 1111px;
   height: 626px;
@@ -71,10 +77,9 @@ header search{
 .gauche {
   float: left;
   margin: 110px 0px 0px 170px; /* haut droite bas gauche */
-  background-color: black;
-  opacity: 0.5;
   width: 410px;
   height: 390px;
+  color: black; 
 }
 
 .droite {
@@ -88,6 +93,30 @@ header search{
   opacity: 0.5;
 }
 
+
+
+/*Acceuil unlogged*/
+
+h1{
+  font-size: 15px;
+  text-decoration: underline;
+}
+.intro{
+  text-align: center;
+  font-size: 13px;
+}
+form{
+  margin-left: 15px;
+}
+form label{
+  float:left;
+  display: inline;
+  width:100px;
+}
+
+
+
+/*Footer*/
 
 footer {
   width: 600px;
