@@ -114,6 +114,9 @@ form label{
   width:100px;
 }
 
+.alert{
+    color: darkred;
+}
 
 
 /*Footer*/
