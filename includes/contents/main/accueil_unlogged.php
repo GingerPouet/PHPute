@@ -6,15 +6,17 @@
 <form id="login-form" method="post" action="index.php">
         <label>Login</label><input type="text" name="login" value="" /><br/>
         <label>Mot de passe</label><input type="password" name="mdp" value="" /><br/>
-        <input type="submit" name="log" value="Se connecter" />  <!--oublie de mdp voir site du z�ro-->
+        <input type="submit" name="log" value="Se connecter" />  <!--oublie de mdp voir site du zéro-->
 </form>
 
 <?php
+    // si le bouton du formulaire de log est cliqué, on vérifie que les champs soient bien renseignés
     if (isset($_POST['log'])){
         if(!empty($_POST['login'])&& ($_POST['mdp'])){
-            //vérifier que le mdp et le login soient bien dans la BDD et charger initier la session en fonction de l'idUser correspondante.
+            //si c'est le cas, on vérifie que le mdp et le login soient bien dans la BDD, on initie la session en fonction de l'idUser correspondante et on renvoi la page index avec l'ouverture de session.
         }
         else{
+            //sinon on renseigne l'utilisateur sur le champs manquant
             if(empty($_POST['login'])){
                 echo '<div class="alert">Vous n\'avez pas saisi de login</div>';
             }
