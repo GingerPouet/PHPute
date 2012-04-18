@@ -5,7 +5,7 @@ a { color:#383838; text-decoration:none; }
 a:hover { color:#383838; text-decoration:underline; }
 a img { border:none; }
 .clear { clear:both; }
-.indentation{margin-left: 5px;}
+.indentation{margin-left: 20px;}
 	
 body {
   background-image: url("../img/background.png");
@@ -116,8 +116,13 @@ form label{
 
 .alert{
     color: darkred;
+    background-color: cornsilk;
 }
-
+/*Accueil logged*/
+.bjr{
+    margin-left: 90px;
+    font-size: 15px;
+}
 
 /*Footer*/
 

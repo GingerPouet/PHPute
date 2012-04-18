@@ -1,6 +1,7 @@
  <div class="droite">
     <?php 
-        switch ($pages){ 
+    include ("includes/contents/news.php");
+        /*switch ($pages){ 
 
             case accueil:
             include ("includes/contents/news.php");
@@ -17,12 +18,13 @@
             default:
             include ("includes/contents/news.php");
             break;
-        }
+        }*/
     ?>
  </div>
  <div class="gauche">
      <?php 
-        switch ($pages){ 
+     include("includes/contents/main/accueil_logged.php");
+        /*switch ($pages){ 
 
             case accueil:
             include ("includes/contents/main/accueil_logged.php");
@@ -39,6 +41,6 @@
             default:
             echo "<a href=\"index.php\" alt=\"index.php\"></a>";
             break;
-        }
+        }*/
     ?>
  </div>
