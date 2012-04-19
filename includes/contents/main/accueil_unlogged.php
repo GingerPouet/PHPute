@@ -11,25 +11,27 @@
 
 <?php
 
-
-
     // si le bouton du formulaire de log est cliqué, on vérifie que les champs soient bien renseignés
     if (isset($_POST['log'])){
         if(!empty($_POST['login'])&& ($_POST['mdp'])){
             //si c'est le cas, on vérifie que le mdp et le login soient bien dans la BDD et correspondent l'un à l'autre
-            $sql = "SELECT * FROM user WHERE login = '".$_POST["login"]."' ";
+            $sql = "SELECT idUser,login,mdp FROM user WHERE login = '".$_POST["login"]."' ";
             $result = mysql_query($sql);
-            if($result){
+            $nbResults = mysql_num_rows($result);
+            if($nbResults>0){
                 $row = mysql_fetch_assoc($result);
                 if($row['mdp'] == $_POST['mdp']){
                      $_SESSION["idUser"] = $row["idUser"];
                      $_SESSION["login"] = $row["login"];
-                     header("Refresh:2 ;url=index.php");
+                     header("Refresh:1 ;url=index.php");
                      echo 'connexion établie';
                  }
                  else{
-                     echo 'Le login ou me mot de passe est incorrect';
+                     echo 'Le mot de passe est incorrect.';
                  }
+            }
+            else{
+                echo 'Le login ou me mot de passe est incorrect';
             }
         }
         else{
@@ -70,7 +72,8 @@
             $checklog = "SELECT login FROM user WHERE login = '".$_POST["login"]."' ";
             $result3 = mysql_query($checklog);
             //si c'est le cas on affiche un message d'erreur
-            if($result3){
+            $nbResults2 = mysql_num_rows($result3);
+            if($nbResults2>0){
                 echo '<div class="alert">Ce login est déjà utilisé. Veuillez en choisir un autre</div>';
             }
             //sinon, on poursuit l'inscription par le test de la longueur des informations saisies par l'utilisateur
@@ -79,33 +82,35 @@
                     echo '<div class="alert">Votre mot de passe doit être compris entre 4 et 10 caractères </div>';
                 exit;
                 }
-                elseif(strlen($_POST['login'])>15 || strlen($_POST['login'])<4){
+                else if(strlen($_POST['login'])>15 || strlen($_POST['login'])<4){
                     echo '<div class="alert">Votre login doit être compris entre 4 et 15 caractères </div>';
                 exit;
                 }
-                elseif(strlen($_POST['nom'])>25 || strlen($_POST['nom'])<2){
+                else if(strlen($_POST['nom'])>25 || strlen($_POST['nom'])<2){
                     echo '<div class="alert">Votre nom doit être compris entre 2 et 25 caractères</div>';
                 exit;
                 }
-                elseif(strlen($_POST['prenom'])>25 || strlen($_POST['prenom'])<2){
+                else if(strlen($_POST['prenom'])>25 || strlen($_POST['prenom'])<2){
                     echo '<div class="alert">Votre prénom doit être compris entre 2 et 25 caractères</div>';
                 exit;
                 }
                 // on vérifie également que le format de l'adresse mail est valide, /!\ on ne vérifie pas l'existance de l'adresse seulement sa composition.
-                elseif(!filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)){
+                else if(!filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)){
                     echo '<div class="alert">Adresse mail fausse.</div>';
                 exit;
                 }
-                //si tout va bien on procède àl'inscription
-                $request="INSERT INTO user (login, mail, mdp, nom, prenom, dateN, sex) VALUES ('".$_POST['login']."','".$_POST['mail']."','".$_POST['mdp']."','".$_POST['nom']."','".$_POST['prenom']."','".$_POST['dateN']."','".$_POST['sex']."'";
-                $inscription= mysql_query($request);
-                if($inscription){
-                    echo 'Inscription réussie !';
-                }   
-                else{
-                    echo 'L\'inscription à échouée.';
-                }
+				//si tout va bien on procède àl'inscription
+				$today = date('Y-m-d');
+				$request="INSERT INTO user (login, mail, mdp, nom, prenom, sex, dateN, dateI, nbquizz, score) VALUES ('".$_POST['login']."','".$_POST['mail']."','".$_POST['mdp']."','".$_POST['nom']."','".$_POST['prenom']."','".$_POST['sex']."','".$_POST['dateN']."','".$today."', '0','0')";
+				$inscription= mysql_query($request);
+				if($inscription){
+					echo 'Inscription réussie !';
+				}   
+				else{
+					echo 'L\'inscription à échouée.';
+				}
             }
+            
         }
         else{
             //sinon on renseigne l'utilisateur sur le champs manquant
