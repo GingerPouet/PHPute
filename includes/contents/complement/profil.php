@@ -1,6 +1,31 @@
 <p>page de profil</p>
 <div class="info">
     
+    
+<?php
+if(isset($_SESSION['login'])){
+    $sql= "SELECT * FROM user WHERE login = '".$_SESSION["login"]."' ";
+    $result = mysql_query($sql);
+    if($result){
+     $row = mysql_fetch_assoc($result);
+     $_SESSION["idUser"] = $row["idUser"];
+     $_SESSION["login"] = $row["login"];
+     $_SESSION["score"] = $row["score"];
+     $_SESSION["nom"] = $row["nom"];
+     $_SESSION["prenom"] = $row["prenom"];
+     $_SESSION["dateN"] = $row["dateN"];
+     $_SESSION["dateI"] = $row["dateI"];
+     $_SESSION["nbquizz"] = $row["nbquizz"];
+    }
+}
+echo "<h1>" . $_SESSION["login"] . "</h1>";
+echo $_SESSION["nom"] ." ".$_SESSION["prenom"] ."<br/>";
+echo "Date de naissance: ".$_SESSION["dateN"] ."<br/>";
+echo "Inscrit depuis le: ".$_SESSION["dateI"] ."<br/>";
+echo "Score: ".$_SESSION["score"]."<br/>";
+echo "Quizz créé(s) : ".$_SESSION["nbquizz"]."<br/>";
+?> 
+    
 <form method="post" action="profil.php" enctype="multipart/form-data">
        <p>
                Choisir une image (JPG, PNG ou GIF | max. à fixer) :<br />
@@ -51,8 +76,24 @@ if($etat){
 
 
 <?php
+
+if(isset($_SESSION['login'])){
+    $sql= "SELECT * FROM user WHERE login = '".$_SESSION["login"]."' ";
+    $result = mysql_query($sql);
+    if($result){
+     $row = mysql_fetch_assoc($result);
+     $_SESSION["idUser"] = $row["idUser"];
+     $_SESSION["login"] = $row["login"];
+     $_SESSION["score"] = $row["score"];
+     $_SESSION["nom"] = $row["nom"];
+     $_SESSION["prenom"] = $row["prenom"];
+     $_SESSION["dateN"] = $row["dateN"];
+     $_SESSION["dateI"] = $row["dateI"];
+     $_SESSION["nbquizz"] = $row["nbquizz"];
+    }
+}
 echo "<h1>" . $_SESSION["login"] . "</h1>";
-echo $_SESSION["nom"] ." ".$_SESSION["prénom"] ."<br/>";
+echo $_SESSION["nom"] ." ".$_SESSION["prenom"] ."<br/>";
 echo "Date de naissance: ".$_SESSION["dateN"] ."<br/>";
 echo "Inscrit depuis le: ".$_SESSION["dateI"] ."<br/>";
 echo "Score: ".$_SESSION["score"];
