@@ -32,6 +32,10 @@
      <?php 
      if(isset($_GET['page'])){
         switch ($_GET['page']){ 
+            
+            case 'resultsearch':
+            include("includes/contents/complement/resultsearch.php");
+            break;
 
             case 'acceuil_logged':
             include("includes/contents/main/accueil_logged.php");
