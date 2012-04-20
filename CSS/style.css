@@ -20,27 +20,18 @@ header {
   height: 150px;
   margin: auto;
   margin-top: 40px;
-  background-color: blue;
-  opacity: 0.5;
 }
 
 #banner {
   width: 900px;
   height: 110px;
   margin: auto;
-  background-color: red;
+  background-color: violet;
   opacity: 0.5;
 }
 
-header search{
-  width: 400px;
-  height: 40px;
-  margin-left: 150px;
-  background-color: white;
-}
-
 #menu {
-  width: 150px;
+  width: 300px;
   height: 30px;
   margin: auto;
   margin-top:80px;
@@ -52,17 +43,23 @@ header search{
   list-style: none;
   float: left;
   font-size: 15px;
-
 }
 
 #search{ 
-  width: 400px;
+  width: 370px;
   height: 40px;
-  margin-left: 150px;
-  background-color: white;
-
+  position: absolute;
+}
+select {
+    margin-left: 10px;
+}
+#theme{
+    float:left;
 }
 
+#user{
+    float: right;
+}
 
 /*Content*/
 
@@ -84,13 +81,9 @@ header search{
 
 .droite {
   float: right;
-  background-color: black;
-  opacity: 0.5;
   margin: 60px 110px 0px 0px; /* haut droite bas gauche */
   width: 290px;
   height: 480px;
-  background-color: black;
-  opacity: 0.5;
 }
 
 
@@ -106,7 +99,7 @@ h1{
   font-size: 13px;
 }
 form{
-  margin-left: 15px;
+  margin-left: 10px;
 }
 form label{
   float:left;

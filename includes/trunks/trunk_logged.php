@@ -1,46 +1,56 @@
  <div class="droite">
     <?php 
-    include ("includes/contents/news.php");
-        /*switch ($pages){ 
+    if(isset($_GET['page'])){
+        switch ($_GET['page']){ 
 
-            case accueil:
-            include ("includes/contents/news.php");
+            case 'acceuil_logged':
+            include ("includes/contents/complement/news.php");
             break;
 
-            case profil:
+            case 'profil':
             include ("includes/contents/complement/profil.php");
             break;
 
-            case quizz:
-            include ("includes/contents/news.php");
+            case 'quizz':
+            include ("includes/contents/complement/news.php");
+            break;
+        
+            case 'logout':
+            include ("includes/headers/logout.php");
             break;
 
             default:
-            include ("includes/contents/news.php");
+            include ("includes/contents/complement/news.php");
             break;
-        }*/
+        }
+    }else{
+        include ("includes/contents/complement/news.php");
+    }
     ?>
  </div>
  <div class="gauche">
      <?php 
-     include("includes/contents/main/accueil_logged.php");
-        /*switch ($pages){ 
+     if(isset($_GET['page'])){
+        switch ($_GET['page']){ 
 
-            case accueil:
-            include ("includes/contents/main/accueil_logged.php");
+            case 'acceuil_logged':
+            include("includes/contents/main/accueil_logged.php");
             break;
 
-            case profil:
-            echo "<a href=\"index.php?page=profil\" alt=\"profil.php\"></a>";
+            case 'profil':
+            include ("includes/contents/complement/news.php");
             break;
 
-            case quizz:
-            echo "<a href=\"index.php?page=quizz\" alt=\"quizz.php\"></a>";
+            case 'quizz':
+            include ("includes/contents/complement/quizz.php");
             break;
 
             default:
-            echo "<a href=\"index.php\" alt=\"index.php\"></a>";
+            include ("includes/contents/main/accueil_logged.php");
             break;
-        }*/
+        }
+    }else{
+        include("includes/contents/main/accueil_logged.php");
+        }
     ?>
  </div>
