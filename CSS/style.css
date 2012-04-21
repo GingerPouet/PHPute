@@ -46,19 +46,18 @@ header {
 }
 
 #search{ 
-  width: 370px;
+  width: 500px;
   height: 40px;
-  position: absolute;
 }
-select {
-    margin-left: 10px;
-}
+
 #theme{
     float:left;
+    width: 200px;
 }
 
 #user{
     float: right;
+    width: 300px;
 }
 
 /*Content*/
