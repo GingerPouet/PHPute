@@ -4,15 +4,15 @@
         switch ($_GET['page']){ 
 
             case 'acceuil_logged':
-            include ("includes/contents/complement/news.php");
+            include ("includes/contents/main/news.php");
             break;
 
             case 'profil':
-            include ("includes/contents/complement/profil.php");
+            include ("includes/contents/main/profil.php");
             break;
 
             case 'quizz':
-            include ("includes/contents/complement/news.php");
+            include ("includes/contents/main/news.php");
             break;
         
             case 'logout':
@@ -20,11 +20,11 @@
             break;
 
             default:
-            include ("includes/contents/complement/news.php");
+            include ("includes/contents/main/news.php");
             break;
         }
     }else{
-        include ("includes/contents/complement/news.php");
+        include ("includes/contents/main/news.php");
     }
     ?>
  </div>
@@ -42,11 +42,11 @@
             break;
 
             case 'profil':
-            include ("includes/contents/complement/news.php");
+            include ("includes/contents/main/news.php");
             break;
 
             case 'quizz':
-            include ("includes/contents/complement/quizz.php");
+            include ("includes/contents/main/quizz.php");
             break;
 
             default:

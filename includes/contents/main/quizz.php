@@ -6,6 +6,11 @@ if(isset($_GET['theme'])){
         echo $row[0];
     }
 }
+
+
+if(isset($_SESSION['login'])){
+    //afficher la page de création d'un quizz.
+}
 ?>
 
 <!-- penser au fieldset et aux legend pour la conception des quizz. c'est joli-->
