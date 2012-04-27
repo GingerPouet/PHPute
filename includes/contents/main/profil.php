@@ -14,29 +14,35 @@ if(isset($_GET["login"])&& ($_GET["login"]== $_SESSION["login"])){
      $_SESSION["dateI"] = $row["dateI"];
      $_SESSION["nbquizz"] = $row["nbquizz"];
     }
+    echo "<h1>" . $_SESSION["login"] . "</h1>";
+    echo $_SESSION["nom"] ." ".$_SESSION["prenom"] ."<br/>";
+    echo "Date de naissance: ".$_SESSION["dateN"] ."<br/>";
+    echo "Inscrit depuis le: ".$_SESSION["dateI"] ."<br/>";
+    echo "Score: ".$_SESSION["score"]."<br/>";
+    echo "Quizz créé(s) : ".$_SESSION["nbquizz"]."<br/>";
 }
 else if(isset($_GET["login"])&& ($_GET["login"]!= $_SESSION["login"])){
     $sql= "SELECT * FROM user WHERE login = '".$_GET["login"]."' ";
     $result = mysql_query($sql);
     if($result){
      $row = mysql_fetch_assoc($result);
-     $_SESSION["idUser"] = $row["idUser"];
-     $_SESSION["login"] = $row["login"];
-     $_SESSION["score"] = $row["score"];
-     $_SESSION["nom"] = $row["nom"];
-     $_SESSION["prenom"] = $row["prenom"];
-     $_SESSION["dateN"] = $row["dateN"];
-     $_SESSION["dateI"] = $row["dateI"];
-     $_SESSION["nbquizz"] = $row["nbquizz"];
+     $infoUser["idUser"] = $row["idUser"];
+     $infoUser["login"] = $row["login"];
+     $infoUser["score"] = $row["score"];
+     $infoUser["nom"] = $row["nom"];
+     $infoUser["prenom"] = $row["prenom"];
+     $infoUser["dateN"] = $row["dateN"];
+     $infoUser["dateI"] = $row["dateI"];
+     $infoUser["nbquizz"] = $row["nbquizz"];
+     
+     echo "<h1>" . $infoUser["login"] . "</h1>";
+     echo $infoUser["nom"] ." ".$infoUser["prenom"] ."<br/>";
+     echo "Date de naissance: ".$infoUser["dateN"] ."<br/>";
+     echo "Inscrit depuis le: ".$infoUser["dateI"] ."<br/>";
+     echo "Score: ".$infoUser["score"]."<br/>";
+     echo "Quizz créé(s) : ".$infoUser["nbquizz"]."<br/>";
     }
 }
-
-echo "<h1>" . $_SESSION["login"] . "</h1>";
-echo $_SESSION["nom"] ." ".$_SESSION["prenom"] ."<br/>";
-echo "Date de naissance: ".$_SESSION["dateN"] ."<br/>";
-echo "Inscrit depuis le: ".$_SESSION["dateI"] ."<br/>";
-echo "Score: ".$_SESSION["score"]."<br/>";
-echo "Quizz créé(s) : ".$_SESSION["nbquizz"]."<br/>";
 ?>
     
     

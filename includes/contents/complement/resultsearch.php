@@ -12,11 +12,11 @@
    
 //si le formulaire de recherche par thème est cliqué
       if(isset($_POST['search_theme'])){
-           $sql = "SELECT titre FROM quizz WHERE theme1 = '".$_POST["theme"]."'OR theme2='".$_POST["theme"]."'OR theme3='".$_POST["theme"]."' ";
+           $sql = "SELECT titre FROM quizz WHERE idQuizz= (SELECT idQuizz from quizz_theme WHERE idTheme='".$_POST["theme"]."' )";
             $result2 = mysql_query($sql);
             $nbResultstheme = mysql_num_rows($result2);
             if($nbResultstheme>0){
-                echo 'Voir les quizz sur le thème <a href="index.php?page=quizz&theme='.$_POST["theme"].'">'.$_POST["theme"].'</a>?';
+                echo '<a href="index.php?page=quizz&theme='.$_POST["theme"].'">Voir tous les quizz sur ce thème </a>?';
                 
             }
    }

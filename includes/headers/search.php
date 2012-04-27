@@ -3,10 +3,14 @@
         <p>Recherche par thème</p>
         <form id="search_theme" method="post" action="index.php?page=resultsearch">
         <select name="theme">
-        <option value="musique">musique</option>
-        <option value="cinema">cinéma</option>
-        <option value="sport">sport</option>
-        <option value="kikoololxoxo">kikoololxoxo</option>
+        <option value="1">Musique</option>
+        <option value="2">Cinéma</option>
+        <option value="3">Littéraure</option>
+        <option value="4">Sport</option>
+        <option value="5">Histoire</option>
+        <option value="6">Loisir</option>
+        <option value="7">Animaux</option>
+        <option value="8">Humour</option>
         </select>
         <input type="submit" name="search_theme"/>
         </form>
