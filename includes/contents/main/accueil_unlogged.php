@@ -104,7 +104,7 @@
 				$request="INSERT INTO user (login, mail, mdp, nom, prenom, sex, dateN, dateI, nbquizz, score) VALUES ('".$_POST['login']."','".$_POST['mail']."','".$_POST['mdp']."','".$_POST['nom']."','".$_POST['prenom']."','".$_POST['sex']."','".$_POST['dateN']."','".$today."', '0','0')";
 				$inscription= mysql_query($request);
 				if($inscription){
-					echo 'Inscription réussie !';
+					echo 'Inscription réussie vous pouvez vous connecter dès maintenant!';
 				}   
 				else{
 					echo 'L\'inscription à échouée.';
