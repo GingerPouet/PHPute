@@ -1,124 +1,76 @@
 <div class="info">  
-<?php
-if(isset($_GET["login"])&& ($_GET["login"]== $_SESSION["login"])){
-    $sql= "SELECT * FROM user WHERE login = '".$_SESSION["login"]."' ";
-    $result = mysql_query($sql);
-    if($result){
-     $row = mysql_fetch_assoc($result);
-     $_SESSION["idUser"] = $row["idUser"];
-     $_SESSION["login"] = $row["login"];
-     $_SESSION["score"] = $row["score"];
-     $_SESSION["nom"] = $row["nom"];
-     $_SESSION["prenom"] = $row["prenom"];
-     $_SESSION["dateN"] = $row["dateN"];
-     $_SESSION["dateI"] = $row["dateI"];
-     $_SESSION["nbquizz"] = $row["nbquizz"];
-    }
-    echo "<h1>" . $_SESSION["login"] . "</h1>";
-    echo $_SESSION["nom"] ." ".$_SESSION["prenom"] ."<br/>";
-    echo "Date de naissance: ".$_SESSION["dateN"] ."<br/>";
-    echo "Inscrit depuis le: ".$_SESSION["dateI"] ."<br/>";
-    echo "Score: ".$_SESSION["score"]."<br/>";
-    echo "Quizz créé(s) : ".$_SESSION["nbquizz"]."<br/>";
-}
-else if(isset($_GET["login"])&& ($_GET["login"]!= $_SESSION["login"])){
-    $sql= "SELECT * FROM user WHERE login = '".$_GET["login"]."' ";
-    $result = mysql_query($sql);
-    if($result){
-     $row = mysql_fetch_assoc($result);
-     $infoUser["idUser"] = $row["idUser"];
-     $infoUser["login"] = $row["login"];
-     $infoUser["score"] = $row["score"];
-     $infoUser["nom"] = $row["nom"];
-     $infoUser["prenom"] = $row["prenom"];
-     $infoUser["dateN"] = $row["dateN"];
-     $infoUser["dateI"] = $row["dateI"];
-     $infoUser["nbquizz"] = $row["nbquizz"];
-     
-     echo "<h1>" . $infoUser["login"] . "</h1>";
-     echo $infoUser["nom"] ." ".$infoUser["prenom"] ."<br/>";
-     echo "Date de naissance: ".$infoUser["dateN"] ."<br/>";
-     echo "Inscrit depuis le: ".$infoUser["dateI"] ."<br/>";
-     echo "Score: ".$infoUser["score"]."<br/>";
-     echo "Quizz créé(s) : ".$infoUser["nbquizz"]."<br/>";
-    }
-}
-?>
-    
-    
-    
-<form method="post" action="profil.php" enctype="multipart/form-data">
-       <p>
-               Choisir une image (JPG, PNG ou GIF | max. à fixer) :<br />
-               <input type="hidden" name="MAX_FILE_SIZE" value="1000000" /> <!---taille max : 1 Mo-->
-               <input type="file" name="avatar"/><br />
-               <input type="submit" name ="submit" value="Charger l'image" />
-       </p>
-</form>
+	<?php
+	if(isset($_GET["login"])&& ($_GET["login"]== $_SESSION["login"])){
+		$sql= "SELECT * FROM user WHERE login = '".$_SESSION["login"]."' ";
+		$result = mysql_query($sql);
+		if($result){
+		 $row = mysql_fetch_assoc($result);
+		 $_SESSION["idUser"] = $row["idUser"];
+		 $_SESSION["login"] = $row["login"];
+		 $_SESSION["score"] = $row["score"];
+		 $_SESSION["nom"] = $row["nom"];
+		 $_SESSION["prenom"] = $row["prenom"];
+		 $_SESSION["sex"] = $row["sex"];
+		 $_SESSION["dateN"] = $row["dateN"];
+		 $_SESSION["dateI"] = $row["dateI"];
+		 $_SESSION["nbquizz"] = $row["nbquizz"];
+		}
+	}
+	else if(isset($_GET["login"])&& ($_GET["login"]!= $_SESSION["login"])){
+		$sql= "SELECT * FROM user WHERE login = '".$_GET["login"]."' ";
+		$result = mysql_query($sql);
+		if($result){
+		 $row = mysql_fetch_assoc($result);
+		 $_SESSION["idUser"] = $row["idUser"];
+		 $_SESSION["login"] = $row["login"];
+		 $_SESSION["score"] = $row["score"];
+		 $_SESSION["nom"] = $row["nom"];
+		 $_SESSION["prenom"] = $row["prenom"];
+		 $_SESSION["sex"] = $row["sex"];
+		 $_SESSION["dateN"] = $row["dateN"];
+		 $_SESSION["dateI"] = $row["dateI"];
+		 $_SESSION["nbquizz"] = $row["nbquizz"];
+		}
+	}
+	?>
 
-<?php //test de validation de l'image
+	<div class="droite_haut">
 
-$idUser = 0; //j'ai mis 0 pour le test, faudra voir avec la BDD plus tard
-// en fait à la place d'un idUser que tu définis il faudrat utiliser $_SESSION["idUser"] puisque tu ne peut modifier que ton avatar et donc uniquement quand tu es loggé donc sur ta session.
-$extensions_acceptees = array('jpg','jpeg','gif','png');
-$maxsize = $_REQUEST['MAX_FILE_SIZE']; //on récupère la taille maximum pour comparer après
-$etat = 1;
+		<?php $avatar=NULL; ?> 
+		<div class="rotate"> <?php echo '<img src="img/uploads/' . $_SESSION['idUser'] . '.jpg" align="right" class="avatar">'; ?> </div>
+		
+		<?php 
+		echo '<h1>' ;
+		if($_SESSION["sex"]=='f') echo '<img src="img/f.png">';
+		else echo'<img src="img/h.png">'; 
+		echo $_SESSION["login"] . "</h1><br/><br/><br/>";
+		?>
 
-if($_FILES['avatar']['error'] > 0){
-       $erreur = "Erreur lors du transfert";
-       $etat = 0;
-} else if($_FILES['avatar']['size'] > $maxsize){
-       $erreur = "L'image dépasse la taille autorisée";
-       $etat = 0;
-}
-$extension_upload = strtolower(substr(strrchr($_FILES['avatar']['name'],'.'),1));
-echo $extension_upload;
-if(!in_array($extension_upload,$extensions_acceptees)){
-       $erreur = "Le format de l'image n'est pas accepté";
-       $etat = 0;
-} ?>
+	</div>
+		
+	<form method="post" action="<?php echo 'index.php?page=profil&login='.$_SESSION["login"].'&avatar=changer'; ?>" enctype="multipart/form-data">
+		<p>
+			<input type="submit" name ="submit" value="Modifier l'image"/>
+		</p>
+	</form>
+	<?php 
+		if(isset($_GET['avatar'])) $avatar=$_GET['avatar'];
+		if($avatar=='changer') {
+		include("includes/contents/complement/changer_avatar.php");
+		}
+	?>
+	<div class="clear"></div>
 
-<pre><?php  print_r($_FILES); ?></pre>
-<!--- c'est pour tester si l'image a bien été stockée dans le tableau,
-faudra l'enlever après -->
+	<div class="droite_bas">
+	<?php
+		echo $_SESSION["prenom"] ." ".$_SESSION["nom"] ."<br/>";
+		echo "Date de naissance: ".$_SESSION["dateN"] ."<br/>";
+		echo "Inscrit depuis le: ".$_SESSION["dateI"] ."<br/>";
+		echo "Score: ".$_SESSION["score"]."<br/>";
+		echo "Quizz créé(s) : ".$_SESSION["nbquizz"]."<br/>";
 
-<?php
+		?>
+	</div>
 
-if($etat){
-       $chemin = '/PHPute/includes/contents/complement/uploads/' . $idUser . '.'
-. $extension_upload ;
-       $resultat = move_uploaded_file($_FILES['avatar']['tmp_name'],$chemin);
-//la ligne du dessus ne marche pas, en fait il stocke pas l'image dans le dossier uploads, il la stocke nulle part j'ai l'impression. donc après rien ne marche, huhu.
-       echo $resultat;
-       if ($resultat) echo "Transfert réussi";
-}
-?>
-
-
-
-<?php
-
-if(isset($_SESSION['login'])){
-    $sql= "SELECT * FROM user WHERE login = '".$_SESSION["login"]."' ";
-    $result = mysql_query($sql);
-    if($result){
-     $row = mysql_fetch_assoc($result);
-     $_SESSION["idUser"] = $row["idUser"];
-     $_SESSION["login"] = $row["login"];
-     $_SESSION["score"] = $row["score"];
-     $_SESSION["nom"] = $row["nom"];
-     $_SESSION["prenom"] = $row["prenom"];
-     $_SESSION["dateN"] = $row["dateN"];
-     $_SESSION["dateI"] = $row["dateI"];
-     $_SESSION["nbquizz"] = $row["nbquizz"];
-    }
-}
-echo "<h1>" . $_SESSION["login"] . "</h1>";
-echo $_SESSION["nom"] ." ".$_SESSION["prenom"] ."<br/>";
-echo "Date de naissance: ".$_SESSION["dateN"] ."<br/>";
-echo "Inscrit depuis le: ".$_SESSION["dateI"] ."<br/>";
-echo "Score: ".$_SESSION["score"];
-echo "Quizz créé(s) : ".$_SESSION["nbquizz"];
-?>
 </div>
-<div class="quizz"></div>
+

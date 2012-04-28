@@ -103,7 +103,7 @@ form{
 form label{
   float:left;
   display: inline;
-  width:100px;
+  width:80px;
 }
 
 .alert{
@@ -114,6 +114,43 @@ form label{
 .bjr{
     margin-left: 90px;
     font-size: 15px;
+}
+
+
+/*Profil*/
+.droite {
+  float: right;
+  margin: 60px 135px 0px 0px; /* haut droite bas gauche */
+  width: 265px;
+  height: 480px;
+}
+
+.droite_haut {
+  margin-top: 8px;
+  margin-left: 55px;
+  width: 230px;
+  height: 120px;
+  background-image: url("../img/fond_droite_haut.png");
+}
+
+.avatar {
+  margin-right: 7px;
+}
+
+.droite_bas {
+  margin-top: 20px;
+  margin-left: 25px;
+  width: 240px;
+}
+
+.droite form {
+  float: right;
+}
+
+.rotate {
+-webkit-transform: rotate(19deg);
+-moz-transform: rotate(19deg);
+transform: rotate(19deg);
 }
 
 /*Footer*/
