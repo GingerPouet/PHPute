@@ -164,11 +164,13 @@ footer {
 }
 
 #pdp{
-  margin: 10px 0px 0px 10px; /* haut droite bas gauche */
+  margin: 20px 0px 0px 10px; /* haut droite bas gauche */
   padding-top: 5px;
-  height: 25px;
+  height: 22px;
+  width: 471px;
   float: left;
-  background-color: white;
+  text-align: center;
+  background-image: url("../img/pdp.png");
 }
 
 #logo{
