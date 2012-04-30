@@ -17,9 +17,10 @@ body {
 
 header {
   width: 900px;
-  height: 150px;
+  height: 130px;
   margin: auto;
   margin-top: 40px;
+  margin-bottom: 30px;
 }
 
 #banner {
@@ -34,7 +35,7 @@ header {
   width: 300px;
   height: 30px;
   margin: auto;
-  margin-top:80px;
+  margin-top:30px;
 }
 
 #menu li {
@@ -85,8 +86,6 @@ header {
   height: 480px;
 }
 
-
-
 /*Acceuil unlogged*/
 
 h1{
@@ -110,12 +109,12 @@ form label{
     color: darkred;
     background-color: cornsilk;
 }
+
 /*Accueil logged*/
 .bjr{
     margin-left: 90px;
     font-size: 15px;
 }
-
 
 /*Profil*/
 .droite {
@@ -139,7 +138,7 @@ form label{
 
 .droite_bas {
   margin-top: 20px;
-  margin-left: 25px;
+  margin-left: 35px;
   width: 240px;
 }
 
@@ -153,13 +152,21 @@ form label{
 transform: rotate(19deg);
 }
 
+/* News */
+
+.news_haut {
+  margin-top: 8px;
+  margin-left: 55px;
+  width: 230px;
+  height: 110px;
+}
+
 /*Footer*/
 
 footer {
   width: 600px;
   height: 50px;
   margin: auto;
-  margin-top: 10px;
   margin-bottom: 40px;
 }
 

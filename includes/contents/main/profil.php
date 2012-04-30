@@ -88,11 +88,11 @@
 	
 	<div class="droite_bas">
 		<?php
-		echo $prenom ." ".$nom ."<br/>";
-		echo "Date de naissance: ".$dateN ."<br/>";
-		echo "Inscrit depuis le: ".$dateI ."<br/>";
-		echo "Score: ".$score."<br/>";
-		echo "Quizz crée(s) : ".$nbquizz."<br/>";
+		echo '<b> ' . $prenom .' '. $nom .'</b><br/><br/>';
+		echo '<b> Date de naissance : </b>' . $dateN . '<br/>';
+		echo '<b> Inscrit depuis le : </b>' . $dateI . '<br/>';
+		echo '<b> Score : </b>'. $score . '<br/>';
+		echo '<b> Quizz crée(s) : </b>' . $nbquizz . '<br/>';
 		?>
 	</div>
 </div>
