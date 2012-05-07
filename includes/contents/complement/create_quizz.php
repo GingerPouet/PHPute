@@ -1,11 +1,11 @@
 <?php
-echo'Créez votre quizz en un clin d\'oeil.<br/>';
+echo'Créez votre quizz en un clin d\'oeil.<br />';
 
 if(isset($_POST['titre'])&& isset($_POST['theme'])){
     $sql_add_titre="INSERT INTO quizz (titre,loginUser) VALUES ('".$_POST['titre']."','".$_SESSION['login']."')";
     $result_add_titre = mysql_query($sql_add_titre);
     if($result_add_titre){
-        echo 'Titre: '.$_POST['titre'].'</br>';
+        echo 'Titre: '.$_POST['titre'].'<br />';
     }
     $sql_add_theme1 = "INSERT INTO quizz_theme (idQuizz, idTheme) VALUES ((SELECT idQuizz FROM quizz WHERE titre ='".$_POST['titre']."'AND loginUser='".$_SESSION['login']."'),'".$_POST['theme']."')";
     $result_add_theme1 = mysql_query($sql_add_theme1);
@@ -13,13 +13,14 @@ if(isset($_POST['titre'])&& isset($_POST['theme'])){
         $select_intitule = "SELECT intitule FROM theme WHERE idTheme='".$_POST['theme']."'";
         $result_intitule1 = mysql_query($select_intitule);
         $intitule1 = mysql_fetch_assoc($result_intitule1);
-        echo 'Thème: '.$intitule1['intitule'].'</br>'; 
+        echo 'Thème: '.$intitule1['intitule'].'<br />'; 
+        include('includes/contents/complement/form_quizz/suite_quizz.php');
     }
 }else{ 
     echo 'Veuillez indiquer un titre et choisir un thème.';
 ?>
     <form method="post" action="index.php?page=quizz">
-                <label>Titre</label><input type="text" name="titre"/></br>
+                <label>Titre</label><input type="text" name="titre"/><br />
                  <select name="theme">
                     <option value="1">Musique</option>
                     <option value="2">Cinéma</option>
@@ -31,7 +32,7 @@ if(isset($_POST['titre'])&& isset($_POST['theme'])){
                     <option value="8">Humour</option>
                     <option selected value="x"></option>
                 </select>
-                <input type="submit" name="sub"/>
+                <input type="submit"/>
     </form>
 <?php
 }

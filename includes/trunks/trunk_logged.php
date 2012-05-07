@@ -36,6 +36,18 @@
             case 'resultsearch':
             include("includes/contents/complement/resultsearch.php");
             break;
+        
+            case 'add_theme':
+            include("includes/contents/complement/form_quizz/add_theme.php");
+            break;
+        
+            case 'add_question':
+            include("includes/contents/complement/form_quizz/add_question.php");
+            break;
+        
+            case 'suite_quizz':
+            include("includes/contents/complement/form_quizz/suite_quizz.php");
+            break;
 
             case 'acceuil_logged':
             include("includes/contents/main/accueil_logged.php");
