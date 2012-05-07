@@ -23,7 +23,7 @@
 
 <div class="droite_bas">
 <?php
-	echo '<b> Dernier(s) quizz créé(s) : </b><br/><br/>';
+	echo '<b> Dernier(s) quizz crÃ©Ã©(s) : </b><br/><br/>';
 		$query_der_quizz = "SELECT titre,loginUser FROM quizz WHERE idQuizz = (SELECT MAX(idQuizz) FROM quizz) OR idQuizz = (SELECT MAX(idQuizz-1) FROM quizz)";
 		$result = mysql_query($query_der_quizz);
 		

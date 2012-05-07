@@ -19,7 +19,7 @@
                     <! [endif]-->
             <link rel="stylesheet" href="CSS/style.css" />
             <script type="text/javascript" src="js/script.js"></script>
-            <title>Titre du site</title>
+            <title>Kitch Quizz on a Kitch Beach</title>
     </head>
     
     <body>

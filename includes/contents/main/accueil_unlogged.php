@@ -1,5 +1,5 @@
 <div class="intro">
-    <p> Bienvenue sur KQBB ! ,</p><br/>
+    <p> Bienvenue sur KQKB ! ,</p><br/>
     <p>Pour participer et bénéficier des services de ce site, vous devez être conneté.</p><br/>
 </div>
 <h1>Connexion</h1>
