@@ -57,6 +57,18 @@
             include ("includes/contents/main/news.php");
             break;
 
+			case 'modifier_infos':
+            include ("includes/contents/complement/modifier_infos.php");
+            break;
+			
+			case 'supprimer_compte':
+            include ("includes/contents/complement/supprimer_compte.php");
+            break;
+			
+			case 'compte_supprime':
+            include ("includes/contents/complement/compte_supprime.php");
+            break;
+			
             case 'quizz':
             include ("includes/contents/main/quizz.php");
             break;

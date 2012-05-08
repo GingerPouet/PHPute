@@ -7,6 +7,8 @@
             if($nbResults>0){
                 echo 'Voir le profil de <a href="index.php?page=profil&login='.$_POST["login"].'">'.$_POST["login"].'</a>?';
                 
+            }else{
+                echo 'Il n\'y a pas de'.$_POST["login"].' sur le site.' ;
             }
    }
    
@@ -18,6 +20,8 @@
             if($nbResultstheme>0){
                 echo '<a href="index.php?page=quizz&theme='.$_POST["theme"].'">Voir tous les quizz sur ce thème </a>?';
                 
+            }else{
+                echo 'Il n\'y a pas de quizz sur ce thème';
             }
    }
 ?>

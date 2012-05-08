@@ -1,4 +1,4 @@
-<div class="news_haut">
+﻿<div class="news_haut">
 	<?php
 
 	echo '<h1> Actu : </h1><br />';
@@ -13,7 +13,6 @@
 		$der_sex = $row[1];
 		$der_id = $row[2];
 
-
 		$query_av_der = "SELECT login, sex FROM user WHERE idUser = (SELECT MAX(idUser) FROM user WHERE idUser < " . $der_id . ")" ;
 		$result2 = mysql_query($query_av_der);
 		
@@ -23,12 +22,12 @@
 				$av_sex = $row[1];
 				
 			if($av_sex=='f') echo '<img src="img/f.png">'; else echo'<img src="img/h.png">'; 
-			echo '<a href="index.php?page=profil&login=' . $av_login . '">' . $av_login . '</a><br />';
+			echo $av_login . '</a><br />';
 		}
 			if($der_sex=='f') echo '<img src="img/f.png">'; else echo'<img src="img/h.png">'; 
-			echo '<a href="index.php?page=profil&login=' . $der_login . '">' . $der_login . '</a><br />';
+			echo $der_login . '<br />';
 	}
-		
+			
 		echo '<br /><br />';
 	?>
 </div>
@@ -55,12 +54,11 @@
 				$av_titre = $row[0];
 				$av_user = $row[1];
 				
-			echo '- ' . $av_titre . '<br /> par : <a href="index.php?page=profil&login=' . $av_user . '">' . $av_user . '</a><br /><br />';
+			echo '- ' . $av_titre . '<br /> par : ' . $av_user . '<br /><br />';
 		}
 
-			echo '- ' . $derq_titre . '<br /> par : <a href="index.php?page=profil&login=' . $derq_user . '">' . $derq_user . '</a><br /><br />';
-	}
-
+			echo '- ' . $derq_titre . '<br /> par : ' . $derq_user . '<br /><br />';
+	}		
 		
 ?>
 </div>

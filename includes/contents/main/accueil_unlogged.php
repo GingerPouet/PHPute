@@ -1,6 +1,6 @@
 <div class="intro">
     <p> Bienvenue sur KQKB ! ,</p><br/>
-    <p>Pour bénéficier des services de ce site, vous devez être conneté.</p><br/>
+    <p>Pour bénéficier des services de ce site vous devez être conneté.</p><br/>
 </div>
 <h1>Connexion</h1>
 <form id="login-form" method="post" action="index.php">

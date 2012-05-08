@@ -5,7 +5,7 @@
         <select name="theme">
         <option value="1">Musique</option>
         <option value="2">Cinéma</option>
-        <option value="3">Littéraure</option>
+        <option value="3">Littérature</option>
         <option value="4">Sport</option>
         <option value="5">Histoire</option>
         <option value="6">Loisir</option>
@@ -20,7 +20,7 @@
         <p>Recherche par login</p>
         <form id="search_user" method="post" action="index.php?page=resultsearch">
             <input type="text" name="login" value="Tapez le login" />
-            <input type="submit" name="search" value="chercher" />
+            <input type="submit" name="search" value="Chercher" />
         </form>
     </div>
 
