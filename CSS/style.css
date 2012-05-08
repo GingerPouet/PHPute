@@ -16,18 +16,18 @@ body {
 /*Headers*/
 
 header {
-  width: 900px;
-  height: 130px;
+  width: 910px;
+  height: 160px;
   margin: auto;
-  margin-top: 40px;
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-image : url("../img/fond_banner.png");
 }
 
 #banner {
   width: 900px;
   height: 110px;
   margin: auto;
-  background-color: violet;
   opacity: 0.5;
 }
 #include_menu{
@@ -41,7 +41,7 @@ header {
 }
 
 #navigation{
-    background-color: whitesmoke;
+
 }
 
 #menu {
@@ -77,7 +77,7 @@ header {
 
 #content {
   width: 1111px;
-  height: 626px;
+  height: 615px;
   margin: auto;
   margin-top: 10px;
   background-image: url("../img/fond_content.png");
@@ -173,13 +173,26 @@ transform: rotate(19deg);
   height: 110px;
 }
 
+/*Quizz*/
+#second_step{
+    display: none;
+}
+#third_step{
+    display: none;
+}
+
+
+
+
+
+
 /*Footer*/
 
 footer {
   width: 600px;
   height: 50px;
   margin: auto;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 #pdp{
