@@ -18,6 +18,9 @@
                             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"> </script>
                     <! [endif]-->
             <link rel="stylesheet" href="CSS/style.css" />
+            <link rel="stylesheet" href="CSS/smoothness/jquery-ui-1.8.20.custom.css"/>
+            <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+            <script type="text/javascript" src="js/jquery-ui-1.8.20.custom.min.js"></script>
             <script type="text/javascript" src="js/script.js"></script>
             <title>Kitch Quizz on a Kitch Beach</title>
     </head>
