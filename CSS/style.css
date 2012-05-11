@@ -17,7 +17,7 @@ body {
 
 header {
   width: 910px;
-  height: 160px;
+  height: 165px;
   margin: auto;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -26,10 +26,10 @@ header {
 
 #banner {
   width: 900px;
-  height: 110px;
+  height: 115px;
   margin: auto;
-  opacity: 0.5;
 }
+
 #include_menu{
     margin-left: 30px;
     float: left;
@@ -38,10 +38,6 @@ header {
 #include_search{
     float: right;
     margin-left: 50px;
-}
-
-#navigation{
-
 }
 
 #menu {
@@ -57,6 +53,11 @@ header {
   list-style: none;
   float: left;
   font-size: 15px;
+}
+
+#menu li a {
+  color: #64a5ae;
+  font-weight: bold;
 }
 
 #search{ 
@@ -77,7 +78,7 @@ header {
 /*Content*/
 
 #content {
-  width: 1111px;
+  width: 1118px;
   height: 615px;
   margin: auto;
   margin-top: 10px;
@@ -175,11 +176,8 @@ transform: rotate(19deg);
 }
 
 /*Quizz*/
-#second_step{
-    display: none;
-}
-#third_step{
-    display: none;
+#tabs-2.Autoscroll{
+    overflow: auto;
 }
 
 
